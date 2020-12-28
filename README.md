@@ -2,7 +2,7 @@
 
 A set of packages for scraping Ubiquiti Unifi data.
 
-TODO: Research the following:
+Thanks to the following URLs for helping getting this working.
 
- - https://github.com/dim13/unifi
+ - https://pkg.go.dev/github.com/unifi-poller/unifi
  - https://ubntwiki.com/products/software/unifi-controller/api
