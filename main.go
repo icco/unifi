@@ -4,11 +4,10 @@ import (
 	"context"
 	"flag"
 	"fmt"
-	"log"
 
 	"github.com/icco/cron/stats"
 	"github.com/icco/unifi/metrics"
-	log "github.com/sirupsen/logrus"
+	"github.com/sirupsen/logrus"
 	"github.com/unifi-poller/unifi"
 )
 
@@ -22,6 +21,7 @@ var (
 
 func main() {
 	flag.Parse()
+	log := logrus.New()
 
 	ctx := context.Background()
 	c := &unifi.Config{
