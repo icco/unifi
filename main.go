@@ -6,15 +6,18 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/icco/cron/stats"
 	"github.com/icco/unifi/metrics"
+	log "github.com/sirupsen/logrus"
 	"github.com/unifi-poller/unifi"
 )
 
 var (
-	host = flag.String("host", "unifi", "Controller hostname")
-	user = flag.String("user", "", "Controller username")
-	pass = flag.String("pass", "", "Controller password")
-	port = flag.Int("port", 8443, "Controller port")
+	host  = flag.String("host", "unifi", "Controller hostname")
+	user  = flag.String("user", "", "Controller username")
+	pass  = flag.String("pass", "", "Controller password")
+	port  = flag.Int("port", 8443, "Controller port")
+	token = flag.String("token", "", "Graphql Token")
 )
 
 func main() {
@@ -39,5 +42,13 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Printf("%d", v)
+	log.Printf("%f clients found", v)
+
+	sc := &stats.Config{
+		Log:          log,
+		GraphQLToken: *token,
+	}
+	if err := sc.UploadStat(ctx, "Network Clients", v); err != nil {
+		log.Fatal(err)
+	}
 }
