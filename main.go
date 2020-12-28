@@ -17,9 +17,12 @@ var (
 )
 
 func main() {
-	ctx := context.Background()
+	flag.Parse()
 
-	u, err := unifi.Login(*user, *pass, *host, *port, "", 6)
+	ctx := context.Background()
+	log.Printf("%s:%s - %s:%s", *host, *port, *user, *pass)
+
+	u, err := unifi.Login(*user, *pass, *host, *port, "default", 6)
 	if err != nil {
 		log.Fatal(err)
 	}
