@@ -51,4 +51,19 @@ func main() {
 	if err := sc.UploadStat(ctx, "Network Clients", v); err != nil {
 		log.Fatal(err)
 	}
+
+	n, err := metrics.GetBytesPerSecond(ctx, u)
+	if err != nil {
+		log.Fatal(err)
+	}
+	log.Printf("WAN: %+v", n)
+
+	bytesPerMb := 125000.0
+	if err := sc.UploadStat(ctx, "WAN TX mbps", n.Upload/bytesPerMb); err != nil {
+		log.Fatal(err)
+	}
+
+	if err := sc.UploadStat(ctx, "WAN RX mbps", n.Download/bytesPerMb); err != nil {
+		log.Fatal(err)
+	}
 }

@@ -27,23 +27,21 @@ type NetworkNumber struct {
 	Download float64
 }
 
-// GetPacketsPerMinute returns the current rate of ppm from the WAN.
-func GetPacketsPerMinute(ctx context.Context, u *unifi.Unifi) (*NetworkNumber, error) {
+// GetBytesPerSecond returns the current rate of ppm from the WAN.
+func GetBytesPerSecond(ctx context.Context, u *unifi.Unifi) (*NetworkNumber, error) {
 	sites, err := u.GetSites()
 	if err != nil {
 		return nil, fmt.Errorf("get sites: %w", err)
 	}
 
-	devs, err := u.GetDevices(sites)
-	if err != nil {
-		return nil, fmt.Errorf("get devices: %w", err)
-	}
-
 	data := &NetworkNumber{}
-	for _, d := range devs.UDMs {
-		// TODO: Maybe get this from WAN data instead?
-		data.Upload += d.TxBytes.Val
-		data.Download += d.RxBytes.Val
+	for _, s := range sites {
+		for _, h := range s.Health {
+			if h.Subsystem == "wan" {
+				data.Upload += h.TxBytesR.Val
+				data.Download += h.RxBytesR.Val
+			}
+		}
 	}
 
 	return data, nil
