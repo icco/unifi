@@ -5,6 +5,7 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/icco/cron/shared"
 	"github.com/icco/cron/stats"
 	"github.com/icco/unifi/metrics"
 	"github.com/sirupsen/logrus"
@@ -45,7 +46,7 @@ func main() {
 	log.Printf("%f clients found", v)
 
 	sc := &stats.Config{
-		Log:          log,
+		Config:       shared.Config{Log: log},
 		GraphQLToken: *token,
 	}
 	if err := sc.UploadStat(ctx, "Network Clients", v); err != nil {
