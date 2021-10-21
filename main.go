@@ -5,10 +5,11 @@ import (
 	"flag"
 	"fmt"
 
+	"github.com/icco/cron/shared"
 	"github.com/icco/cron/stats"
+	"github.com/icco/gutil/logging"
 	"github.com/icco/unifi/metrics"
-	"github.com/sirupsen/logrus"
-	"github.com/unifi-poller/unifi"
+	"github.com/unpoller/unifi"
 )
 
 var (
@@ -21,15 +22,15 @@ var (
 
 func main() {
 	flag.Parse()
-	log := logrus.New()
+	log := logging.Must(logging.NewLogger("unifi"))
 
 	ctx := context.Background()
 	c := &unifi.Config{
 		User:     *user,
 		Pass:     *pass,
 		URL:      fmt.Sprintf("https://%s:%d/", *host, *port),
-		ErrorLog: log.Printf,
-		DebugLog: log.Printf,
+		ErrorLog: log.Errorf,
+		DebugLog: log.Debugf,
 	}
 
 	u, err := unifi.NewUnifi(c)
@@ -42,10 +43,10 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Printf("%f clients found", v)
+	log.Infof("%f clients found", v)
 
 	sc := &stats.Config{
-		Log:          log,
+		Config:       shared.Config{Log: log},
 		GraphQLToken: *token,
 	}
 	if err := sc.UploadStat(ctx, "Network Clients", v); err != nil {
@@ -56,7 +57,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Printf("WAN: %+v", n)
+	log.Infof("WAN: %+v", n)
 
 	bytesPerMb := 125000.0
 	if err := sc.UploadStat(ctx, "WAN TX mbps", n.Upload/bytesPerMb); err != nil {

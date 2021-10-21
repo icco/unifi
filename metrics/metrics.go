@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/unifi-poller/unifi"
+	"github.com/unpoller/unifi"
 )
 
 // GetClients returns the numbers of clients tracked by this unifi.
