@@ -29,8 +29,8 @@ func main() {
 		User:     *user,
 		Pass:     *pass,
 		URL:      fmt.Sprintf("https://%s:%d/", *host, *port),
-		ErrorLog: log.Printf,
-		DebugLog: log.Printf,
+		ErrorLog: log.Errorf,
+		DebugLog: log.Debugf,
 	}
 
 	u, err := unifi.NewUnifi(c)
@@ -43,7 +43,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	log.Printf("%f clients found", v)
+	log.Infof("%f clients found", v)
 
 	sc := &stats.Config{
 		Config:       shared.Config{Log: log},
@@ -57,7 +57,7 @@ func main() {
 	if err != nil {
 		log.Fatal(err)
 	}
-	log.Printf("WAN: %+v", n)
+	log.Infof("WAN: %+v", n)
 
 	bytesPerMb := 125000.0
 	if err := sc.UploadStat(ctx, "WAN TX mbps", n.Upload/bytesPerMb); err != nil {
