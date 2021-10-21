@@ -1,6 +1,6 @@
 # unifi
 
-A set of packages for scraping Ubiquiti Unifi data.
+A tool for scrapping unifi and uploading the data to graphql.natwelch.com.
 
 Thanks to the following URLs for helping getting this working.
 
