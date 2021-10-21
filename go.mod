@@ -5,7 +5,7 @@ go 1.14
 require (
 	github.com/icco/cron v0.0.0-20210828133707-723bcc397538
 	github.com/icco/graphql v0.0.0-20211021014339-1d911e29160e // indirect
-	github.com/sirupsen/logrus v1.8.1
+	github.com/icco/gutil v0.0.0-20211021013813-86568fa1710c
 	github.com/unifi-poller/unifi v0.0.6 // indirect
 	github.com/unpoller/unifi v0.0.9
 	golang.org/x/crypto v0.0.0-20210921155107-089bfa567519 // indirect
