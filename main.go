@@ -8,7 +8,7 @@ import (
 	"github.com/icco/cron/stats"
 	"github.com/icco/unifi/metrics"
 	"github.com/sirupsen/logrus"
-  "github.com/unpoller/unifi"
+	"github.com/unpoller/unifi"
 )
 
 var (
