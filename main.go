@@ -7,8 +7,8 @@ import (
 
 	"github.com/icco/cron/shared"
 	"github.com/icco/cron/stats"
+	"github.com/icco/gutil/logging"
 	"github.com/icco/unifi/metrics"
-	"github.com/sirupsen/logrus"
 	"github.com/unpoller/unifi"
 )
 
@@ -22,7 +22,7 @@ var (
 
 func main() {
 	flag.Parse()
-	log := logrus.New()
+	log := logging.Must(logging.NewLogger("unifi"))
 
 	ctx := context.Background()
 	c := &unifi.Config{
