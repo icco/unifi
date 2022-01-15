@@ -3,7 +3,7 @@ module github.com/icco/unifi
 go 1.17
 
 require (
-	github.com/icco/cron v0.0.0-20220115161705-a634ede5f7bd
+	github.com/icco/cron v0.0.0-20220115171043-6e902a34c009
 	github.com/icco/gutil v0.0.0-20220115171937-06fb917087d7
 	github.com/unifi-poller/unifi v0.0.8
 )
@@ -23,7 +23,6 @@ require (
 	github.com/XSAM/otelsql v0.10.0 // indirect
 	github.com/agnivade/levenshtein v1.1.1 // indirect
 	github.com/briandowns/openweathermap v0.16.0 // indirect
-	github.com/edsrzf/mmap-go v1.1.0 // indirect
 	github.com/felixge/httpsnoop v1.0.2 // indirect
 	github.com/go-chi/chi/v5 v5.0.7 // indirect
 	github.com/go-logr/logr v1.2.2 // indirect
@@ -36,7 +35,7 @@ require (
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
-	github.com/icco/graphql v0.0.0-20220115161852-1b88449db525 // indirect
+	github.com/icco/graphql v0.0.0-20220115171111-ed4369d8ed92 // indirect
 	github.com/icco/lunchmoney v0.3.0 // indirect
 	github.com/icco/zapdriver v1.4.0 // indirect
 	github.com/imgix/imgix-go/v2 v2.0.3 // indirect
