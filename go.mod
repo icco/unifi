@@ -4,7 +4,7 @@ go 1.17
 
 require (
 	github.com/icco/cron v0.0.0-20220115161705-a634ede5f7bd
-	github.com/icco/gutil v0.0.0-20220115170613-a57da700978e
+	github.com/icco/gutil v0.0.0-20220115171937-06fb917087d7
 	github.com/unifi-poller/unifi v0.0.8
 )
 
