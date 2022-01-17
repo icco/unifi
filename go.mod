@@ -3,7 +3,7 @@ module github.com/icco/unifi
 go 1.17
 
 require (
-	github.com/icco/cron v0.0.0-20220115171043-6e902a34c009
+	github.com/icco/cron v0.0.0-20220115172744-4cdb7cd03ec4
 	github.com/icco/gutil v0.0.0-20220117013958-c851cb44991d
 	github.com/unifi-poller/unifi v0.0.8
 )
@@ -15,7 +15,7 @@ require (
 	cloud.google.com/go/monitoring v1.2.0 // indirect
 	cloud.google.com/go/storage v1.18.2 // indirect
 	cloud.google.com/go/trace v1.0.0 // indirect
-	github.com/99designs/gqlgen v0.15.0 // indirect
+	github.com/99designs/gqlgen v0.15.1 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/metric v1.0.0-RC1.0.20220111155622-771af0772772 // indirect
 	github.com/GoogleCloudPlatform/opentelemetry-operations-go/exporter/trace v1.0.1-0.20220111155622-771af0772772 // indirect
 	github.com/GuiaBolso/darwin v0.0.0-20191218124601-fd6d2aa3d244 // indirect
@@ -35,7 +35,7 @@ require (
 	github.com/google/go-cmp v0.5.6 // indirect
 	github.com/google/uuid v1.3.0 // indirect
 	github.com/googleapis/gax-go/v2 v2.1.1 // indirect
-	github.com/icco/graphql v0.0.0-20220115171111-ed4369d8ed92 // indirect
+	github.com/icco/graphql v0.0.0-20220115172806-f561f722370d // indirect
 	github.com/icco/lunchmoney v0.3.0 // indirect
 	github.com/icco/zapdriver v1.4.0 // indirect
 	github.com/imgix/imgix-go/v2 v2.0.3 // indirect
