@@ -1,24 +1,21 @@
 module github.com/icco/unifi
 
-go 1.21
+go 1.23.0
 
 toolchain go1.24.2
 
 require (
-	github.com/icco/gutil v0.0.0-20220221170217-9aa326c389ec
+	github.com/icco/gutil v0.0.0-20250215014032-7b1b73930901
 	github.com/unpoller/unifi v0.4.3
 )
 
 require (
-	github.com/benbjohnson/clock v1.3.0 // indirect
 	github.com/brianvoe/gofakeit/v6 v6.28.0 // indirect
-	github.com/go-chi/chi/v5 v5.0.7 // indirect
+	github.com/go-chi/chi/v5 v5.2.1 // indirect
 	github.com/icco/zapdriver v1.4.0 // indirect
-	github.com/pkg/errors v0.9.1 // indirect
-	go.uber.org/atomic v1.9.0 // indirect
-	go.uber.org/multierr v1.7.0 // indirect
-	go.uber.org/zap v1.21.0 // indirect
-	golang.org/x/net v0.24.0 // indirect
+	go.uber.org/multierr v1.11.0 // indirect
+	go.uber.org/zap v1.27.0 // indirect
+	golang.org/x/net v0.39.0 // indirect
 )
 
 // Add explicit replace directives for OpenTelemetry packages
