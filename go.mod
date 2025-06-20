@@ -11,7 +11,7 @@ require (
 
 require (
 	github.com/brianvoe/gofakeit/v6 v6.28.0 // indirect
-	github.com/go-chi/chi/v5 v5.2.1 // indirect
+	github.com/go-chi/chi/v5 v5.2.2 // indirect
 	github.com/icco/zapdriver v1.4.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
