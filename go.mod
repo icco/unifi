@@ -1,8 +1,6 @@
 module github.com/icco/unifi
 
-go 1.23.0
-
-toolchain go1.24.2
+go 1.25.0
 
 require (
 	github.com/icco/gutil v0.0.0-20250215014032-7b1b73930901
@@ -15,7 +13,7 @@ require (
 	github.com/icco/zapdriver v1.4.0 // indirect
 	go.uber.org/multierr v1.11.0 // indirect
 	go.uber.org/zap v1.27.0 // indirect
-	golang.org/x/net v0.39.0 // indirect
+	golang.org/x/net v0.55.0 // indirect
 )
 
 // Add explicit replace directives for OpenTelemetry packages
