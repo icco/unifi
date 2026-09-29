@@ -5,9 +5,9 @@ import (
 	"flag"
 	"fmt"
 
-	"github.com/icco/gutil/logging"
-	"github.com/icco/unifi/metrics"
 	"github.com/unpoller/unifi"
+	"go.icco.me/gutil/logging"
+	"go.icco.me/unifi/metrics"
 )
 
 var (
