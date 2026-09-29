@@ -1,4 +1,4 @@
-module github.com/icco/unifi
+module go.icco.me/unifi
 
 go 1.25.0
 
